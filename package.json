@@ -1,0 +1,20 @@
+{
+  "name": "cf_fe_challenge",
+  "version": "1.0.0",
+  "description": "# Browser Support \t- IE9+ \t- Chrome \t- Firefox \t- Safari",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loschorts/cf_fe_challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loschorts/cf_fe_challenge/issues"
+  },
+  "homepage": "https://github.com/loschorts/cf_fe_challenge#readme"
+}
