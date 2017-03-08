@@ -1,10 +1,52 @@
 html, body {
-	background: rgb(201,201,201);
 	height: 100%;
+}
+
+body {
+	background: rgb(201,201,201);
 }
 
 main {
 	background: #fff;
 	width: 80%;
 	height: 80%;
+	padding: 1.25em;
+}
+
+main > section {
+	display: inline-block;
+}
+
+.vertical-center-children > * {
+	position: relative;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.center {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#left {
+	height: 25em;
+	width: 12.5em;
+	background: rgb(155,202,62);
+}
+
+#middle {
+	height: 31.5em;
+	width: calc(100% - 25em);
+	background: rgb(246,140,31);
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
+#right {
+	height: 18.5em;
+	width: 12.5em;
+	background: rgb(47,122,190);
 }
