@@ -4,7 +4,10 @@
   "description": "# Browser Support \t- IE9+ \t- Chrome \t- Firefox \t- Safari",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer",
+    "watch-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer -w"
+
   },
   "repository": {
     "type": "git",
@@ -23,9 +26,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
-    "autoprefixer-loader": "^3.2.0",
-    "css-loader": "^0.26.4",
-    "postcss-loader": "^1.3.3",
-    "style-loader": "^0.13.2"
+    "postcss-cli": "^3.0.0-beta"
   }
 }
