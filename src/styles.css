@@ -131,6 +131,7 @@ ul.form-errors {
 
 .nav-bar {
 	list-style: none;
+    padding: 0;
 	color: rgb(114,162,208);
 }
 
