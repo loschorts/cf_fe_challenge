@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer",
     "watch-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer -w"
-
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,13 @@
   },
   "homepage": "https://github.com/loschorts/cf_fe_challenge#readme",
   "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
     "normalize.css": "^5.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
