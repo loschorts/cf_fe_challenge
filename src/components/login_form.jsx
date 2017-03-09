@@ -7,9 +7,9 @@ const invalidEmailMsg = "Email must follow 'test@example.com' format.";
 const pwValidator = /^.{6,}$/;
 const invalidPwMsg = "Password must be 6 or more characters."
 
-const getEmptyErrors = () => ({
-	errors: {email: [], password: []},
-	styles: {email: "", password: ""}
+const getNewErrors = () => ({
+	email: [],
+	password: []
 })
 
 class LoginForm extends React.Component {
@@ -19,10 +19,6 @@ class LoginForm extends React.Component {
 			email: undefined,
 			password: undefined,
 			errors: {email: [], password: []},
-			styles: {
-				email: "",
-				password: "",
-			}
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.validate = this.validate.bind(this);
@@ -36,31 +32,18 @@ class LoginForm extends React.Component {
 			this.setState({[key]: value})
 		}
 	}
-	clearErrors(){
-		const emptyErrors = getEmptyErrors();
-
-		return new Promise(resolve => {
-			this.setState(emptyErrors, resolve)
-		});
-	}
 	handleSubmit(e){
 		e.preventDefault();
 		this.clearErrors().then(this.validate).then(this.submit, this.updateErrors);
 	}
-	updateErrors(newErrorState){
-		this.setState(newErrorState);
-	}
-	submit(){
-		// simulates failed API error requests
-		setTimeout(()=>{
-			const newErrorState = getEmptyErrors();
-			newErrorState.errors.email.push("username/password combination not found.");
-			newErrorState.styles.email = "invalid";
-			this.setState(newErrorState);
-		}, 1000)
+	clearErrors(){
+		const errors = getNewErrors();
+		return new Promise(resolve => {
+			this.setState({errors}, resolve)
+		});
 	}
 	validate(){
-		const {email, password} = this.state;
+		let {email, password} = this.state;
 		const emailIsValid = emailValidator.test(email)
 		const pwIsValid = pwValidator.test(password)
 
@@ -69,26 +52,35 @@ class LoginForm extends React.Component {
 			if (emailIsValid && pwIsValid) {
 				resolve()
 			} else {
-				const newErrorState = getEmptyErrors();
-
-				if (!emailIsValid) {
-					newErrorState.errors.email.push(invalidEmailMsg);
-					newErrorState.styles.email = "invalid";
-				}
-				if (!pwIsValid) {
-					newErrorState.errors.password.push(invalidPwMsg);
-					newErrorState.styles.password = "invalid";
-				}
-				reject(newErrorState);
+				const errors = getNewErrors();
+				if (!emailIsValid) errors.email.push(invalidEmailMsg)
+				if (!pwIsValid) errors.password.push(invalidPwMsg)
+				reject(errors);
 			}
 		})
 	}
+	submit(){
+		// simulates server-side error response
+		setTimeout(()=>{
+			const resErrorMsg = "username/password combination not found."
+			const errors = getNewErrors();
+			errors.email.push(resErrorMsg);
+			this.setState({errors});
+		}, 1000)
+	}
+	updateErrors(errors){
+		this.setState({errors});
+	}
 	render(){
-		const {email, password, errors, styles} = this.state;
+		const {email, password, errors} = this.state;
 
 		// setup error decorations
 		const formFilled = (email && password);
-		const submitEnabledClass = formFilled ? "enabled" : "disabled";
+		const submitEnabledClass = formFilled ? "" : "disabled";
+		const styles = {
+			email: errors.email.length > 0 ? "invalid" : "",
+			password: errors.password.length > 0 ? "invalid" : ""
+		}
 
 		// render the form
 		return(
@@ -112,7 +104,8 @@ class LoginForm extends React.Component {
 					/>
 				<FormErrors keyName={"login-pw"} msgs={errors.password}/>
 				<input
-					className="submit button"
+					disabled={!formFilled}
+					className={`submit button ${submitEnabledClass}`}
 					type="submit"
 					value="Login" />
 			</form>

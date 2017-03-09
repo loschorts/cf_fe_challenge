@@ -93,6 +93,9 @@ section {
 
 /*WIDGETS*/
 
+
+/*login form*/
+
 .login-form {
 	text-align: right;
 }
@@ -107,4 +110,22 @@ section {
 input.text {
 	box-sizing: border-box;
 	width: 100%;
+}
+
+.button.disabled {
+	background: rgb(201,201,201);
+}
+
+/*nav bar*/
+
+.nav-bar {
+	list-style: none;
+}
+
+.nav-bar-link {
+	text-decoration: none;
+}
+
+.nav-bar-link.active {
+	font-weight: bolder;
 }
