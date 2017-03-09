@@ -12,6 +12,15 @@ body {
 	align-items: center;
 }
 
+.center {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	margin: auto;
+}
+
 main {
 	background: #fff;
 	width: 80%;
@@ -20,13 +29,6 @@ main {
 	height: 80%;
 	padding: 1.25em;
 	overflow: hidden;
-}
-
-.center {
-	position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 }
 
 #left {
