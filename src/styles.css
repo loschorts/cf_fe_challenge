@@ -74,7 +74,6 @@ section {
 #left {
     height: 25em;
     width: 12.5em;
-    background: rgb(155, 202, 62);
 }
 
 #middle {
@@ -132,12 +131,34 @@ ul.form-errors {
 
 .nav-bar {
 	list-style: none;
+	color: rgb(114,162,208);
+}
+
+.nav-bar-li {
+	text-align: right;
+}
+
+.nav-bar-li > * {
+	line-height: 100%;
+	vertical-align: middle;
 }
 
 .nav-bar-link {
+	color: inherit;
 	text-decoration: none;
+	max-width: 80%;
+}
+
+.nav-bar-li:hover {
+	text-decoration: underline;
+}
+
+.nav-bar-li .arrow-right {
+	height: 100%;
+	max-width: 20%;
+	fill: rgb(114,162,208);
 }
 
 .nav-bar-link.active {
-	font-weight: bolder;
+	font-weight: 800;
 }

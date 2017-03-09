@@ -16,8 +16,8 @@ class LoginForm extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			email: undefined,
-			password: undefined,
+			email: null,
+			password: null,
 			errors: {email: [], password: []},
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
 	}
 	onChange(key){
 		return (e)=>{
-			const value = (e.target.value === "") ? undefined : e.target.value;
+			const value = (e.target.value === "") ? null : e.target.value;
 			this.setState({[key]: value})
 		}
 	}

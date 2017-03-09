@@ -16,6 +16,7 @@ class NavBar extends React.Component {
 						className={`nav-bar-link ${activeClass}`} >
 						{text}
 					</Link>
+					<img className="arrow-right" src={"arrow-right.svg"} />
 				</li>
 			);
 		})

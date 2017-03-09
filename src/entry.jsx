@@ -10,16 +10,16 @@ import {Promise} from 'es6-promise';
 if (!window.Promise) window.Promise = Promise;
 
 const DNSTable = () => (<div>DNSTABLE</div>);
-const NotFound = () => (<div>NotFound</div>);
+const NotFound = ({params: {missing}}) => (<div>No route matches '{missing}'</div>);
 
 const links = [
 	{text: "DNS Records", path: "/dns"},
-	{text: "Something Else"},
-	{text: "Another Link"},
-	{text: "Yet Another Link"},
-	{text: "Here be Dragons"},
-	{text: "Linky Link"},
-	{text: "A Link"},
+	{text: "Something Else", path: "a"},
+	{text: "Another Link", path: "b"},
+	{text: "Yet Another Link", path: "c"},
+	{text: "A Link", path: "d"},
+	{text: "Linky Link", path: "e"},
+	{text: "A Link", path: "f"},
 ]
 
 const Root = ({ children }) => (
@@ -41,8 +41,8 @@ const Root = ({ children }) => (
 const AppRouter = () => (
 	<Router history={hashHistory}>
 		<Route path="/" component={Root}>
-			<IndexRoute component={NotFound}/>
 			<Route path="dns" component={DNSTable}/>
+			<Route path=":missing" component={NotFound}/>
 		</Route>
 	</Router>
 )
