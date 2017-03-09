@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import LoginForm from './components/login_form'
+
 const Root = () => (
 	<main className="center widgets">
 		<div className="container widgets">
-			<section id="left" className="flex">
+			<section id="left" className="widget">
 			</section>
-			<section id="middle" className="flex">
+			<section id="middle" className="widget">
 			</section>
-			<section id="right" className="flex">
+			<section id="right" className="widget">
+				<LoginForm/>
 			</section>
 		</div>
 	</main>

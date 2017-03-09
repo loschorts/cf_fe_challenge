@@ -29,6 +29,11 @@ body {
 	overflow: hidden;
 }
 
+.container * {
+	white-space: normal;
+	text-align: left;
+}
+
 /* .widgets classes ensure minimum height of parents
  or middle element to have adequate vertical margins*/
 
@@ -60,6 +65,11 @@ main {
 	overflow: hidden;
 }
 
+section {
+	display: block;
+	overflow: wrap;
+}
+
 #left {
 	height: 25em;
 	width: 12.5em;
@@ -76,9 +86,25 @@ main {
 	margin: 1.25em;
 }
 
-
 #right {
 	height: 18.5em;
 	width: 12.5em;
-	background: rgb(47,122,190);
+}
+
+/*WIDGETS*/
+
+.login-form {
+	text-align: right;
+}
+
+.submit {
+	margin-top: 1em;
+	background: rgb(47,123,191);
+	color: white;
+	width: initial;
+}
+
+input.text {
+	box-sizing: border-box;
+	width: 100%;
 }
