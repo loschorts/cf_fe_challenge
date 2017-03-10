@@ -19,7 +19,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.coffee'],
+    extensions: ['.js', '.jsx'],
     modules: ['node_modules']
   },
 };
