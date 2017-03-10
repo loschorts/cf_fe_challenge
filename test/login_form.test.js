@@ -8,6 +8,6 @@ describe("LoginForm", ()=> {
   const loginForm = <LoginForm/>
 
   it('contains email and password fields', () => {
-    
+    expect()
   });
 })
