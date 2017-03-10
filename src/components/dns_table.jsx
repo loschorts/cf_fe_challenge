@@ -29,7 +29,7 @@ const prepend = (type, text) => {
 			break;
 	}
 
-	return <span className="table-data">{prefix}{text}</span>
+	return <span>{prefix}{text}</span>
 }
 
 

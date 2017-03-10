@@ -1,4 +1,5 @@
 import React from 'react';
+import ColorSpan from './color_span';
 
 class TableRow extends React.Component {
 	constructor(){
@@ -16,7 +17,8 @@ class TableRow extends React.Component {
 		}
 	}
 	render(){
-		const {values, checked, selected, onCheckedChange, onSelectedChange, className, headers, ord } = this.props;
+		const {values, checked, selected, onCheckedChange, onSelectedChange, 
+			className, headers, ord, colorBy, colorMap } = this.props;
 
 		const selectedClass = selected ? "selected" : "";
 		const checkedClass = checked ? "checked" : "";
@@ -31,12 +33,22 @@ class TableRow extends React.Component {
 
 		let entries = [<td key={`${className}-row-${ord}-checkbox`} className="table-checkbox">{checkbox}</td>]
 
-		entries = entries.concat(
-			values.map((h, i) => <td key={`${className}-row-${ord}-${i}`} className={headers[i]}>{h}</td>)
-		);
+		let borderColor;
+		entries = entries.concat(values.map((v, i) => {
+			const colorize = (i === headers.indexOf(colorBy));
+			const color =  colorMap[v];
+			if (colorize) borderColor = color;
+			const content = colorize ? <ColorSpan color={color}>{v}</ColorSpan> : v;
+			return(
+				<td key={`${className}-row-${ord}-${i}`} className={headers[i]}>
+					{content}
+				</td>
+			);
+		}));
 
 		return (
 			<tr 
+				style={{borderColor}}
 				key={`className-row-${ord}`}
 				onClick={this.handleSelect} 
 				className={`${className}-row ${selectedClass} ${checkedClass}`}>

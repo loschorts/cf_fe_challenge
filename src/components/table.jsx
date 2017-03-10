@@ -27,6 +27,8 @@ class Table extends React.Component {
 
 			return (
 				<TableRow
+					colorBy={colorBy}
+					colorMap={colorMap}
 					key={`${className}-TableRow-${i}`}
 					className={className}
 					headers={headers}
