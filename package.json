@@ -4,6 +4,7 @@
   "description": "# Browser Support \t- IE9+ \t- Chrome \t- Firefox \t- Safari",
   "main": "index.js",
   "scripts": {
+    "webpack": "$(npm bin)/webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer",
     "watch-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer -w"
