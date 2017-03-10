@@ -3,6 +3,11 @@ html, body, #root {
     width: 100%;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     background: rgb(201, 201, 201);
@@ -81,7 +86,6 @@ section {
     width: 100%;
     width: calc(100% - 12.5em - 12.5em - 2.5em - 2.5em);
     min-width: 12.5em;
-    background: rgb(246, 140, 31);
     margin: 1.25em;
 }
 
@@ -166,16 +170,35 @@ ul.form-errors {
 /*table styles*/
 
 .dns-table {
+    height: 100%;
     width: 100%;
     table-layout: fixed;
 }
 
+.dns-table .headers {
+    background: rgb(235,235,235);
+}
+
+.dns-table tr:nth-child(even) {
+    background-color: rgb(250,250,250);
+}
+
+.dns-table th {
+    height: 2.5em;
+}
+
+.dns-table tr {
+    height: 15%;
+}
+
 .dns-table td {
+    vertical-align: middle;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .dns-table .table-checkbox {
+    text-align: center;
     width: 5%;
 }
 
