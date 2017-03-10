@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
 	submit(){
 		// simulates server-side error response
 		setTimeout(()=>{
-			const resErrorMsg = "Username/password combination not found."
+			const resErrorMsg = "Server-side authentication error."
 			const errors = getNewErrors();
 			errors.email.push(resErrorMsg);
 			this.setState({errors});

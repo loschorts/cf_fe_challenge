@@ -24,7 +24,7 @@ class TableRow extends React.Component {
 
 		const checkbox = (
 			<input 
-				ref={cb =>{this.checkbox = cb}}
+				ref={el => this.checkbox = el}
 				type="checkbox" 
 				checked={checked} 
 				onChange={this.handleCheck}/>
