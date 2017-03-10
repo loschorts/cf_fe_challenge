@@ -173,6 +173,7 @@ ul.form-errors {
     height: 100%;
     width: 100%;
     table-layout: fixed;
+    font-size: 90%;
 }
 
 .dns-table .headers {
@@ -184,26 +185,32 @@ ul.form-errors {
 }
 
 .dns-table th {
+    border-left: .3em solid rgb(235,235,235);
     height: 2.5em;
 }
 
 .dns-table tr {
+    box-sizing: border-box;
     height: 15%;
 }
 
+.dns-table tbody tr {
+    border-left: .3em solid rgb(235,235,235);
+}
 .dns-table td {
     vertical-align: middle;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-right: 1em;
 }
 
 .dns-table .table-checkbox {
     text-align: center;
-    width: 5%;
+    width: 10%;
 }
 
 .dns-table .Type {
-    width: 5%;
+    width: 10%;
 }
 
 .dns-table .Name {
@@ -211,7 +218,7 @@ ul.form-errors {
 }
 
 .dns-table .Value {
-    width: 45%;
+    width: 35%;
 }
 
 .dns-table .TTL {
