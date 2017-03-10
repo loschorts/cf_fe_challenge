@@ -4,7 +4,7 @@
   "description": "# Browser Support \t- IE9+ \t- Chrome \t- Firefox \t- Safari",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer",
     "watch-styles": "$(npm bin)/postcss ./src/styles.css -d dist/ --use autoprefixer -w"
   },
@@ -33,6 +33,18 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
-    "postcss-cli": "^3.0.0-beta"
+    "babel-jest": "^19.0.0",
+    "enzyme": "^2.7.1",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^2.1.2",
+    "postcss-cli": "^3.0.0-beta",
+    "react-test-renderer": "^15.4.2",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
   }
 }
