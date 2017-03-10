@@ -32,10 +32,6 @@ const prepend = (type, text) => {
 	return <span>{prefix}{text}</span>
 }
 
-const showChange = state => console.log(
-	'Table state changed:', state);
-
-
 class DNSTable extends React.Component {
 	constructor() {
 		super();
@@ -64,7 +60,6 @@ class DNSTable extends React.Component {
 		if (this.state.records) {
 			return (
 				<Table 
-					onChange={showChange}
 					className="dns-table" 
 					headers={headers} 
 					colorBy="Type" 
