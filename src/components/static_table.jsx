@@ -27,6 +27,7 @@ class StaticTable extends React.Component {
 
 			return (
 				<TableRow
+					key={`${className}-TableRow-${i}`}
 					className={className}
 					headers={headers}
 					values={values} 
