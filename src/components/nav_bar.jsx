@@ -4,7 +4,7 @@ import {Link, hashHistory} from 'react-router';
 class NavBar extends React.Component {
 	render() {
 		const current = hashHistory.getCurrentLocation().pathname;
-		const {links} = this.props;
+		const links = this.props.links || [];
 
 		const items = links.map(({text, path}, i) => {
 			path = path || "/";
@@ -20,6 +20,7 @@ class NavBar extends React.Component {
 				</li>
 			);
 		})
+
 
 		return(
 			<ul className="nav-bar">

@@ -98,20 +98,18 @@ section {
 
 /*Login Form*/
 
-.login-form {
-    text-align: right;
-}
-
 .login-form input {
     padding: .3em;
 }
 
 input.submit {
+    float: right;
     margin-top: 1em;
     width: 40%;
 }
 
 input.text {
+    margin-top: 1em;
     box-sizing: border-box;
     width: 100%;
 }

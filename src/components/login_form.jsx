@@ -71,6 +71,7 @@ class LoginForm extends React.Component {
 		}, 1000)
 	}
 	updateErrors(errors){
+		setTimeout(()=>{},0);
 		this.setState({errors});
 	}
 	render(){
@@ -87,7 +88,7 @@ class LoginForm extends React.Component {
 		// render the form
 		return(
 			<form onSubmit={this.handleSubmit} className="center login-form">
-				<p>Email</p>
+				<label>Email
 				<input 
 					className={`text ${styles.email}`}
 					type="text"
@@ -95,8 +96,9 @@ class LoginForm extends React.Component {
 					placeholder="sample@email.com"
 					onChange={this.onChange("email")}
 					/>
+				</label>
 				<FormErrors keyName={"login-email"} msgs={errors.email}/>
-				<p>Password</p>
+				<label>Password
 				<input 
 					className={`text ${styles.password}`}
 					type="password"
@@ -104,6 +106,7 @@ class LoginForm extends React.Component {
 					placeholder="password"
 					onChange={this.onChange("password")}
 					/>
+				</label>
 				<FormErrors keyName={"login-pw"} msgs={errors.password}/>
 				<input
 					disabled={!formFilled}
