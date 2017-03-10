@@ -6,11 +6,13 @@
 	- Firefox
 	- Safari
 
-## Supplied Questions
-
-
+## Responses to Design Questions
 
 ### Which design details are difficult to implement?
+
+The hardest design details to implement were: 
+
+-**
 
 ### Which design details are impossible to implement?
 
@@ -27,14 +29,5 @@
 ### What compromises or changes would you make to facilitate cross-browser implementation?
 
 ## Design Decisions
-
-
-
-
-• As regards to the designs themselves:
-
-
-
-
 
 
