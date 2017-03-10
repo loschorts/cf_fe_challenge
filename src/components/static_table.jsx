@@ -15,7 +15,7 @@ class StaticTable extends React.Component {
 		}
 	}
 	render() {
-		const {className, headers, colorBy, colorMap, data} = this.props;
+		const {className, headers, colorBy, colorMap, data, widths} = this.props;
 		const {checked, selected} = this.state;
 
 		//build rows
@@ -26,8 +26,9 @@ class StaticTable extends React.Component {
 			})
 
 			return (
-				<TableRow 
+				<TableRow
 					className={className}
+					headers={headers}
 					values={values} 
 					ord={i}
 					checked={checked[i]}
@@ -39,7 +40,7 @@ class StaticTable extends React.Component {
 		});
 
 		return (
-			<table className={className}>
+			<table className={className}> 
 				<thead><TableHeader className={className} headers={headers}/></thead>
 				<tbody>{rows}</tbody>
 			</table>

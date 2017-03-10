@@ -16,7 +16,7 @@ class TableRow extends React.Component {
 		}
 	}
 	render(){
-		const {values, checked, selected, onCheckedChange, onSelectedChange, className } = this.props;
+		const {values, checked, selected, onCheckedChange, onSelectedChange, className, headers } = this.props;
 
 		const selectedClass = selected ? "selected" : "";
 		const checkedClass = checked ? "checked" : "";
@@ -29,7 +29,7 @@ class TableRow extends React.Component {
 				onChange={this.handleCheck}/>
 		);
 
-		const entries = [<td>{checkbox}</td>].concat(values.map(h => <td>{h}</td>));
+		const entries = [<td className="table-checkbox">{checkbox}</td>].concat(values.map((h, i) => <td className={headers[i]}>{h}</td>));
 		return (
 			<tr 
 				onClick={this.handleSelect} 

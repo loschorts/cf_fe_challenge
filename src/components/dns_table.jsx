@@ -37,7 +37,7 @@ class DNSTable extends React.Component {
 		return new Promise((resolve, reject) => {
 			setTimeout( ()=>{
 				resolve(responseJSON)
-			}, 1500);
+			}, 0);
 		});
 	}
 	render() {

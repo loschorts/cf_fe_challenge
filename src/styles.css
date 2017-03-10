@@ -5,7 +5,6 @@ html, body, #root {
 
 body {
     font-family: 'Open Sans', sans-serif;
-
     background: rgb(201, 201, 201);
 }
 
@@ -162,4 +161,36 @@ ul.form-errors {
 
 .nav-bar-link.active {
 	font-weight: 800;
+}
+
+/*table styles*/
+
+.dns-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.dns-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dns-table .table-checkbox {
+    width: 5%;
+}
+
+.dns-table .Type {
+    width: 5%;
+}
+
+.dns-table .Name {
+    width: 25%;
+}
+
+.dns-table .Value {
+    width: 45%;
+}
+
+.dns-table .TTL {
+    width: 20%;
 }
