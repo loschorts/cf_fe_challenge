@@ -102,11 +102,13 @@ section {
     text-align: right;
 }
 
-.submit {
+.login-form input {
+    padding: .3em;
+}
+
+input.submit {
     margin-top: 1em;
-    background: rgb(47, 123, 191);
-    color: white;
-    width: initial;
+    width: 40%;
 }
 
 input.text {
@@ -116,6 +118,16 @@ input.text {
 
 input.invalid {
     border: 1px solid red;
+}
+
+.button {
+    min-height: 2.2em;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(47, 123, 191);
+    color: white;
+    cursor: pointer;
+    font-weight: lighter;
 }
 
 .button.disabled {
@@ -145,6 +157,7 @@ ul.form-errors {
 .nav-bar-li > * {
 	line-height: 100%;
 	vertical-align: middle;
+    margin: 1em 0;
 }
 
 .nav-bar-link {
@@ -158,13 +171,18 @@ ul.form-errors {
 }
 
 .nav-bar-li .arrow-right {
-	height: 100%;
+    margin-left: 1.5em;
+	height: 1em;
 	max-width: 20%;
 	fill: rgb(114,162,208);
 }
 
 .nav-bar-link.active {
-	font-weight: 800;
+	font-weight: 600;
+}
+
+.arrow-right {
+    height: 3em;
 }
 
 /*table styles*/
@@ -235,6 +253,6 @@ ul.form-errors {
     white-space: nowrap;
 }
 
-.button {
-    cursor: pointer;
+.selected {
+    background: rgb(235,235,235) !important;
 }

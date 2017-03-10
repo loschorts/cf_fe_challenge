@@ -16,9 +16,10 @@ class LoginForm extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			email: null,
-			password: null,
+			email: "",
+			password: "",
 			errors: {email: [], password: []},
+			enabled: false,
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.validate = this.validate.bind(this);
@@ -28,8 +29,9 @@ class LoginForm extends React.Component {
 	}
 	onChange(key){
 		return (e)=>{
-			const value = (e.target.value === "") ? null : e.target.value;
-			this.setState({[key]: value})
+			const value = (e.target.value === "") ? "" : e.target.value;
+			const enabled = (this.state.errors.email.length < 0 && this.state.errors.password.length < 0)
+			this.setState({[key]: value, enabled})
 		}
 	}
 	handleSubmit(e){

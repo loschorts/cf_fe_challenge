@@ -8,11 +8,10 @@ class TableRow extends React.Component {
 		this.handleSelect = this.handleSelect.bind(this);
 	}
 	handleCheck(e){
-		e.preventDefault();
-		this.props.onCheckedChange(e.currentTarget.checked);
+		this.props.onCheckedChange(e.target.checked);
 	}
 	handleSelect(e){
-		if (e.currentTarget !== this.checkbox) {
+		if (e.target !== this.checkbox) {
 			this.props.onSelectedChange(e);
 		}
 	}

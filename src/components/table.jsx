@@ -3,21 +3,23 @@ import TableHeader from './table_header';
 import TableRow from './table_row';
 
 class Table extends React.Component {
-	constructor() {
-		super()
-		this.state = {checked: [], selected: []}
+	constructor(props) {
+		super(props);
+		const {data} = props;
+		this.state = {checked: data.map(()=> false), selected: data.map(()=> false)}
 	}
 	handleChange(type, i) {
 		return ()=> {
-			newState = this.state;
-			newState[type][i] = !this.state[type][i];
-			this.setState({[type]: newState[type]})
+			const newSet = this.state[type].slice()
+			newSet[i] = !newSet[i];
+			this.setState({[type]: newSet}, ()=> {
+				if (this.props.onChange) this.props.onChange(this.state);
+			})
 		}
 	}
 	render() {
 		const {className, headers, colorBy, colorMap, data, widths} = this.props;
 		const {checked, selected} = this.state;
-
 		//build rows
 		const rows = data.map((entry, i) => {
 			const values = []
