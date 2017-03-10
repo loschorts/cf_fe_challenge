@@ -2,7 +2,7 @@ import React from 'react';
 import TableHeader from './table_header';
 import TableRow from './table_row';
 
-class StaticTable extends React.Component {
+class Table extends React.Component {
 	constructor() {
 		super()
 		this.state = {checked: [], selected: []}
@@ -49,4 +49,4 @@ class StaticTable extends React.Component {
 	}
 }
 
-export default StaticTable;
+export default Table;

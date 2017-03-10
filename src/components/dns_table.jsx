@@ -1,7 +1,8 @@
 import React from 'react';
-import StaticTable from './static_table';
+import Table from './table';
+import Prefix from './prefix';
 
-import responseJSON from './table_data.js'
+import responseJSON from './table_data.js';
 
 const headers = [
 	"Type", "Name", "Value", "TTL"
@@ -16,6 +17,22 @@ const colorMap = {
 	"SRV": "red"
 }
 
+const prepend = (type, text) => {
+	let prefix;
+	switch (type) {
+		case "A":
+		case "AAAA":
+			prefix = <Prefix text="points to"/>
+			break;
+		case "MX":
+			prefix = <Prefix text="mail handled by"/>
+			break;
+	}
+
+	return <span className="table-data">{prefix}{text}</span>
+}
+
+
 class DNSTable extends React.Component {
 	constructor() {
 		super();
@@ -26,7 +43,7 @@ class DNSTable extends React.Component {
 			records = records.map(r => ({
 				Type: r.type,
 				Name: r.name,
-				Value: r.value,
+				Value: prepend(r.type, r.value),
 				TTL: r.ttl
 			}))
 			this.setState({ records })
@@ -43,7 +60,7 @@ class DNSTable extends React.Component {
 	render() {
 		if (this.state.records) {
 			return (
-				<StaticTable 
+				<Table 
 					className="dns-table" 
 					headers={headers} 
 					colorBy="Type" 

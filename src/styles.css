@@ -224,3 +224,17 @@ ul.form-errors {
 .dns-table .TTL {
     width: 20%;
 }
+
+.quiet {
+    white-space: nowrap;
+    color: rgb(192,192,192);
+    margin-right: 1em;
+}
+
+.table-data {
+    white-space: nowrap;
+}
+
+.button {
+    cursor: pointer;
+}
