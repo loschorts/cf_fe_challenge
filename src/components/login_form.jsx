@@ -71,6 +71,7 @@ class LoginForm extends React.Component {
 		}, 1000)
 	}
 	updateErrors(errors){
+		setTimeout(()=>{},0);
 		this.setState({errors});
 	}
 	render(){
