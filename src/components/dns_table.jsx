@@ -9,12 +9,12 @@ const headers = [
 ]
 
 const colorMap = {
-	"A": "black",
-	"MX": "blue",
-	"TXT": "green",
-	"AAAA": "gray",
-	"LOC": "purple",
-	"SRV": "red"
+	"A": "rgb(64,64,64)",
+	"MX": "rgb(47,123,191)",
+	"TXT": "rgb(189,219,129)",
+	"AAAA": "rgb(199,199,199)",
+	"LOC": "rgb(98,161,217)",
+	"SRV": "rgb(222,80,82)"
 }
 
 const prepend = (type, text) => {
