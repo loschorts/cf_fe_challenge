@@ -38,6 +38,7 @@
     "jest": "^19.0.2",
     "jest-enzyme": "^2.1.2",
     "postcss-cli": "^3.0.0-beta",
+    "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "regenerator-runtime": "^0.10.3"
   },
