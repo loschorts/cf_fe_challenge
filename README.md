@@ -197,9 +197,9 @@ I would have (and should have) supplied additional wireframes with my clarificat
 
 ### Are they good designs? That is, in your opinion, do they contain design errors?
 
-I think the designs were good, despite a few minor errors. As discussed above, more detail would have improved the development process. 
+I think the designs were good, despite a few errors. As discussed above, more detail would have improved the development process. Another possible area of improvement would be in screen-size responsiveness, which is largely unaddressed.
 
-From a UX perspective, I think the checkbox/select features were slightly vague and could potentially overlap in functionality. I also question the prominence and permanence of the login form, which could have been displayed in a way that was less obtrusive to the main functionality (viewing the table).
+From a UX perspective, I think the checkbox/select features were slightly vague and could potentially overlap in functionality. I would also question the prominence and permanence of the login form, which could have been displayed in a way that was less obtrusive to the main functionality (viewing the table).
 
 ### If they were to be implemented as is, would they enhance or hinder the user experience?
 
