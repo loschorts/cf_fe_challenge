@@ -1,6 +1,6 @@
 # CF Front-End Challenge
 
-https://loschorrts.github.io/cf_fe_challenge
+https://loschorts.github.io/cf_fe_challenge/index.html
 
 ## Browser Support
 	- IE9+
