@@ -2,7 +2,7 @@
 
 live demos: https://loschorts.github.io/cf_fe_challenge/index.html
 
-[part 2 response](#Part-2)
+[part 2 response](#part-2)
 
 ## Browser Support
 	- IE9+
