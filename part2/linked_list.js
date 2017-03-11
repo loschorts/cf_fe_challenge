@@ -1,3 +1,6 @@
+// this helper class is used to maintain constant insertion and deletion time of
+// friends held by the friend_list
+
 function Link(item) {
 	this.item = item;
 	this.next;

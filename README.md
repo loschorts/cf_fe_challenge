@@ -236,3 +236,64 @@ I believe that the main compromise on this project was doing CSS layout without 
 - [ ] Extract coloring logic from `Table` and into CSS.
 
 - [ ] Disable Submit button while a request is pending.
+
+
+## Part 2
+
+https://loschorts.github.io/cf_fe_challenge/part2/index.html
+[response source code](part2)
+
+## Bonus Questions
+
+### How can EventEmitter change to support wildcard tokens in the event key ( app.*.log )?
+
+By storing regex matchers for wildcards:
+
+```js
+
+function EventEmitter(options) {
+	this._ons = {};
+	this._onces = {};
+}
+
+EventEmitter.prototype.on = function(name, cb){
+	
+	var matcher = name.replace("*", ".+")
+
+	if(!this._ons[matcher]) this._ons[matcher] = [];
+	this._ons[matcher].push(cb);
+}
+
+EventEmitter.prototype.emit = function(name){
+	var args = [].slice.call(arguments, 1)
+
+	for (matcher in this._ons) {
+		if new RegExp(matcher).test(name) {
+			for (var i = 0 ; i < this._ons[matcher].length ; i++) {
+			this._ons[name][i].apply(null, args)
+		}
+	}
+	...
+}
+
+```
+
+### How Can EventEmitter be modified to support a limited number of callbacks for a given event key?
+
+By checking the number of callbacks already registered before adding the callback passed to `on`.
+
+```js
+function EventEmitter(options) {
+	this._ons = {};
+	this._onces = {};
+	this.maxHandlers = options.maxHandlers;
+}
+
+EventEmitter.prototype.on = function(name, cb){
+	
+	if(!this._ons[name]) this._ons[name] = [];
+	if (this.maxHandlers && this._ons[name].length >= this.maxHandlers) return;
+	this._ons[name].push(cb);
+}
+
+```

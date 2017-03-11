@@ -1,3 +1,6 @@
+// this wrapper class binds to a DOM element and adds and removes list items of
+// friends names according to the actions emitted to it by its FriendsEmitter.
+
 function FriendList(root){
 	this.root = root;
 	this.children = {}
