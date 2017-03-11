@@ -104,7 +104,6 @@ section {
 
 input.submit {
     float: right;
-    margin-top: 1em;
     width: 40%;
 }
 
@@ -135,6 +134,7 @@ input.invalid {
 /*FormErrors*/
 
 ul.form-errors {
+    margin-bottom: 1em;
     padding: 0;
     color: red;
     list-style: none;

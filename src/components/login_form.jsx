@@ -67,11 +67,10 @@ class LoginForm extends React.Component {
 			const resErrorMsg = "Server-side authentication error."
 			const errors = getNewErrors();
 			errors.email.push(resErrorMsg);
-			this.setState({errors});
-		}, 1000)
+			this.updateErrors(errors);
+		}, 500)
 	}
 	updateErrors(errors){
-		setTimeout(()=>{},0);
 		this.setState({errors});
 	}
 	render(){
