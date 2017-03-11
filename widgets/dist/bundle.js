@@ -12212,7 +12212,7 @@ var LoginForm = function (_React$Component) {
 			email: "",
 			password: "",
 			errors: { email: [], password: [] },
-			enabled: false
+			disabled: false
 		};
 		_this.handleSubmit = _this.handleSubmit.bind(_this);
 		_this.validate = _this.validate.bind(_this);
@@ -12230,9 +12230,13 @@ var LoginForm = function (_React$Component) {
 			return function (e) {
 				var _this2$setState;
 
-				var value = e.target.value === "" ? "" : e.target.value;
-				var enabled = _this2.state.errors.email.length < 0 && _this2.state.errors.password.length < 0;
-				_this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, key, value), _defineProperty(_this2$setState, 'enabled', enabled), _this2$setState));
+				var _state = _this2.state,
+				    email = _state.email,
+				    password = _state.password;
+				// disable if form not filled
+
+				var disabled = email.length === 0 || password.length === 0;
+				_this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, key, e.target.value), _defineProperty(_this2$setState, 'disabled', disabled), _this2$setState));
 			};
 		}
 	}, {
@@ -12254,9 +12258,9 @@ var LoginForm = function (_React$Component) {
 	}, {
 		key: 'validate',
 		value: function validate() {
-			var _state = this.state,
-			    email = _state.email,
-			    password = _state.password;
+			var _state2 = this.state,
+			    email = _state2.email,
+			    password = _state2.password;
 
 			var emailIsValid = emailValidator.test(email);
 			var pwIsValid = pwValidator.test(password);
@@ -12289,20 +12293,22 @@ var LoginForm = function (_React$Component) {
 	}, {
 		key: 'updateErrors',
 		value: function updateErrors(errors) {
-			this.setState({ errors: errors });
+			// disable the form if errors occur
+			var disabled = errors.email.length > 0 || errors.password.length > 0;
+			this.setState({ errors: errors, disabled: disabled });
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var _state2 = this.state,
-			    email = _state2.email,
-			    password = _state2.password,
-			    errors = _state2.errors;
+			var _state3 = this.state,
+			    email = _state3.email,
+			    password = _state3.password,
+			    errors = _state3.errors,
+			    disabled = _state3.disabled;
 
 			// setup error decorations
 
-			var formFilled = email && password;
-			var submitEnabledClass = formFilled ? "" : "disabled";
+			var disabledClass = disabled ? "disabled" : "";
 			var styles = {
 				email: errors.email.length > 0 ? "invalid" : "",
 				password: errors.password.length > 0 ? "invalid" : ""
@@ -12339,8 +12345,8 @@ var LoginForm = function (_React$Component) {
 				),
 				_react2.default.createElement(_form_errors2.default, { keyName: "login-pw", msgs: errors.password }),
 				_react2.default.createElement('input', {
-					disabled: !formFilled,
-					className: 'submit button ' + submitEnabledClass,
+					disabled: disabled,
+					className: 'submit button ' + disabledClass,
 					type: 'submit',
 					value: 'Login' })
 			);

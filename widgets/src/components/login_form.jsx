@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
 			email: "",
 			password: "",
 			errors: {email: [], password: []},
-			enabled: false,
+			disabled: false,
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.validate = this.validate.bind(this);
@@ -29,9 +29,10 @@ class LoginForm extends React.Component {
 	}
 	onChange(key){
 		return (e)=>{
-			const value = (e.target.value === "") ? "" : e.target.value;
-			const enabled = (this.state.errors.email.length < 0 && this.state.errors.password.length < 0)
-			this.setState({[key]: value, enabled})
+			const {email, password} = this.state;
+			// disable if form not filled
+			const disabled = (email.length === 0 || password.length === 0)
+			this.setState({[key]: e.target.value, disabled})
 		}
 	}
 	handleSubmit(e){
@@ -71,14 +72,15 @@ class LoginForm extends React.Component {
 		}, 500)
 	}
 	updateErrors(errors){
-		this.setState({errors});
+		// disable the form if errors occur
+		const disabled = (errors.email.length > 0 || errors.password.length > 0)
+		this.setState({errors, disabled});
 	}
 	render(){
-		const {email, password, errors} = this.state;
+		const {email, password, errors, disabled} = this.state;
 
 		// setup error decorations
-		const formFilled = (email && password);
-		const submitEnabledClass = formFilled ? "" : "disabled";
+		const disabledClass = disabled ? "disabled" : "";
 		const styles = {
 			email: errors.email.length > 0 ? "invalid" : "",
 			password: errors.password.length > 0 ? "invalid" : ""
@@ -108,8 +110,8 @@ class LoginForm extends React.Component {
 				</label>
 				<FormErrors keyName={"login-pw"} msgs={errors.password}/>
 				<input
-					disabled={!formFilled}
-					className={`submit button ${submitEnabledClass}`}
+					disabled={disabled}
+					className={`submit button ${disabledClass}`}
 					type="submit"
 					value="Login" />
 			</form>
