@@ -18,16 +18,16 @@ function LinkedList() {
 	this.head.next = this.tail;
 	this.tail.prev = this.head;
 
-	this._index = {};
+	this.index = {};
 }
 
 LinkedList.prototype.get = function(id){
-	return this._index[id].item;
+	return this.index[id].item;
 }
 
 LinkedList.prototype.add = function(item){
 	if (!item.id) throw TypeError('item must be object with id property');
-	if (this._index[item.id]) return false;
+	if (this.index[item.id]) return false;
 
 	var newLink = new Link(item);
 
@@ -36,14 +36,14 @@ LinkedList.prototype.add = function(item){
 	newLink.next = this.tail;
 	this.tail.prev = newLink;
 
-	this._index[item.id] = newLink;
+	this.index[item.id] = newLink;
 	return newLink.item;
 }
 
 LinkedList.prototype.remove = function(item){
-	if (!this._index[item.id]) return false;
-	var item = this._index[item.id].remove().item;
-	delete this._index[item.id];
+	if (!this.index[item.id]) return false;
+	var item = this.index[item.id].remove().item;
+	delete this.index[item.id];
 	return item;
 }
 
