@@ -1,6 +1,6 @@
 # CF Front-End Challenge
 
-https://loschorts.github.io/cf_fe_challenge/index.html
+live demos: https://loschorts.github.io/cf_fe_challenge/index.html
 
 [part 2 response](#Part-2)
 
