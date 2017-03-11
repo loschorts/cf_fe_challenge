@@ -220,6 +220,7 @@ Because I used webpack for JS transpilation, I had very few other cross-browser 
 I believe that the main compromise on this project was doing CSS layout without flexbox. The other main compromise was locating all of my CSS in one file to simplify autoprefixing. This was mainly a time-constraint compromise, as I didn't have time to research the proper way of easily transpiling multiple CSS files with the tools I had at hand. This was partly due the the constraints of the first part of the project, where JS was disallowed, making certain webpack modules for style-processing unusable.
 
 ## Improvements
+-[] Implement Unit/Integration Testing.
 -[] Refactor stylesheets to use webpack and / or multiple files organized by domain.
 -[] Implement a better CSS transpiling strategy.
 -[] Responsive styling.
