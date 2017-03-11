@@ -82,11 +82,8 @@ class LoginForm extends React.Component {
 	}
 	render(){
 		const {email, password, errors, disabled} = this.state;
-		console.log(`e: ${email}`, `pw: ${password}`)
-		console.log(errors)
-		console.log(disabled)
 		// setup error decorations
-		const disabledClass = disabled ? "disabled" : "";
+		const disabledClass = disabled ? "disabled" : "enabled";
 		const styles = {
 			email: errors.email.length > 0 ? "invalid" : "",
 			password: errors.password.length > 0 ? "invalid" : ""
