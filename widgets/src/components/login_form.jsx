@@ -29,10 +29,14 @@ class LoginForm extends React.Component {
 	}
 	onChange(key){
 		return (e)=>{
-			const {email, password} = this.state;
+			let {email, password} = this.state;
 			// disable if form not filled
-			const disabled = (email.length === 0 || password.length === 0)
-			this.setState({[key]: e.target.value, disabled})
+			this.setState({[key]: e.target.value},
+			()=>{
+				let {email, password} = this.state;
+				const disabled = (email.length === 0 || password.length === 0)
+				this.setState({disabled})
+			})
 		}
 	}
 	handleSubmit(e){
@@ -78,7 +82,9 @@ class LoginForm extends React.Component {
 	}
 	render(){
 		const {email, password, errors, disabled} = this.state;
-
+		console.log(`e: ${email}`, `pw: ${password}`)
+		console.log(errors)
+		console.log(disabled)
 		// setup error decorations
 		const disabledClass = disabled ? "disabled" : "";
 		const styles = {
