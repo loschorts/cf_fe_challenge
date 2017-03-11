@@ -12228,15 +12228,19 @@ var LoginForm = function (_React$Component) {
 			var _this2 = this;
 
 			return function (e) {
-				var _this2$setState;
-
 				var _state = _this2.state,
 				    email = _state.email,
 				    password = _state.password;
 				// disable if form not filled
 
-				var disabled = email.length === 0 || password.length === 0;
-				_this2.setState((_this2$setState = {}, _defineProperty(_this2$setState, key, e.target.value), _defineProperty(_this2$setState, 'disabled', disabled), _this2$setState));
+				_this2.setState(_defineProperty({}, key, e.target.value), function () {
+					var _state2 = _this2.state,
+					    email = _state2.email,
+					    password = _state2.password;
+
+					var disabled = email.length === 0 || password.length === 0;
+					_this2.setState({ disabled: disabled });
+				});
 			};
 		}
 	}, {
@@ -12258,9 +12262,9 @@ var LoginForm = function (_React$Component) {
 	}, {
 		key: 'validate',
 		value: function validate() {
-			var _state2 = this.state,
-			    email = _state2.email,
-			    password = _state2.password;
+			var _state3 = this.state,
+			    email = _state3.email,
+			    password = _state3.password;
 
 			var emailIsValid = emailValidator.test(email);
 			var pwIsValid = pwValidator.test(password);
@@ -12300,14 +12304,16 @@ var LoginForm = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _state3 = this.state,
-			    email = _state3.email,
-			    password = _state3.password,
-			    errors = _state3.errors,
-			    disabled = _state3.disabled;
+			var _state4 = this.state,
+			    email = _state4.email,
+			    password = _state4.password,
+			    errors = _state4.errors,
+			    disabled = _state4.disabled;
 
+			console.log('e: ' + email, 'pw: ' + password);
+			console.log(errors);
+			console.log(disabled);
 			// setup error decorations
-
 			var disabledClass = disabled ? "disabled" : "";
 			var styles = {
 				email: errors.email.length > 0 ? "invalid" : "",

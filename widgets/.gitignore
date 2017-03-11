@@ -1,4 +1,4 @@
-node_modules
-bundle.*
+node_modules/
+dist/
 __snapshots__
 *.log
