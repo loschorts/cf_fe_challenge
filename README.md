@@ -191,14 +191,28 @@ const AppRouter = () => (
 
 ### How would you change them? How might you seek confirmation or feedback?
 
+The designs leave many implementation details undiscussed, so my main revision would be to add wireframes of more specific application states throughout. 
+
+I would have (and should have) supplied additional wireframes with my clarification questions in seeking feedback about the project parameters. Had I been able to receive feedback during the development process, I would probably solicit it through sharing screenshots and requesting feedback after completing each major feature.
+
 ### Are they good designs? That is, in your opinion, do they contain design errors?
+
+I think the designs were good, despite a few minor errors. As discussed above, more detail would have improved the development process. 
+
+From a UX perspective, I think the checkbox/select features were slightly vague and could potentially overlap in functionality. I also question the prominence and permanence of the login form, which could have been displayed in a way that was less obtrusive to the main functionality (viewing the table).
 
 ### If they were to be implemented as is, would they enhance or hinder the user experience?
 
+Please see the above response.
+
 ### What browser-specific issues arise from the designs?
+
+The primary browser-specific issue I encountered was styling for IE9. Without flexbox, I had to use much more explicit layout settings than otherwise, and the app as-it-stands suffers from poor responsiveness. 
+
+Another issue I had was with the varying levels of vendor support for certain CSS styles. I solved this by using `autoprefixer` with `postcss-cli`, which allowed me to auto-generate the appropriate prefixes for my CSS.
+
+Because I used webpack for JS transpilation, I had very few other cross-browser issues. The only issue I specifically had to address was with the use of `Promise` syntax. I required the `es6-promise` polyfill to handle this. 
 
 ### What compromises or changes would you make to facilitate cross-browser implementation?
 
-## Design Decisions
-
-
+I believe that the main compromise on this project was doing CSS layout without flexbox. The other main compromise was locating all of my CSS in one file to simplify autoprefixing. This was mainly a time-constraint compromise, as I didn't have time to research the proper way of easily transpiling multiple CSS files with the tools I had at hand. This was partly due the the constraints of the first part of the project, where JS was disallowed, making certain webpack modules for style-processing unusable.
