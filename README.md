@@ -221,16 +221,16 @@ I believe that the main compromise on this project was doing CSS layout without 
 
 ## Improvements
 
--[ ] Implement Unit/Integration Testing.
+- [ ] Implement Unit/Integration Testing.
 
--[ ] Refactor stylesheets to use webpack and / or multiple files organized by domain.
+- [ ] Refactor stylesheets to use webpack and / or multiple files organized by domain.
 
--[ ] Implement a better CSS transpiling strategy.
+- [ ] Implement a better CSS transpiling strategy.
 
--[ ] Responsive styling.
+- [ ] Responsive styling.
 
--[ ] Table ordering should be explicit and not implied from data order.
+- [ ] Table ordering should be explicit and not implied from data order.
 
--[ ] Extract coloring logic from `Table` and into CSS.
+- [ ] Extract coloring logic from `Table` and into CSS.
 
--[ ] Disable Submit button while a request is pending.
+- [ ] Disable Submit button while a request is pending.
