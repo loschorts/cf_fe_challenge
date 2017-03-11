@@ -2,7 +2,7 @@
 
 https://loschorts.github.io/cf_fe_challenge/index.html
 
-[part 2 response](part_2.md)
+[part 2 response](#Part-2)
 
 ## Browser Support
 	- IE9+
