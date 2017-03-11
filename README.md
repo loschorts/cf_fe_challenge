@@ -241,6 +241,7 @@ I believe that the main compromise on this project was doing CSS layout without 
 ## Part 2
 
 https://loschorts.github.io/cf_fe_challenge/part2/index.html
+
 [response source code](part2)
 
 ## Bonus Questions
