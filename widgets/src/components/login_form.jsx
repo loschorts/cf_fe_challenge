@@ -19,7 +19,7 @@ class LoginForm extends React.Component {
 			email: "",
 			password: "",
 			errors: {email: [], password: []},
-			disabled: false,
+			disabled: true,
 		}
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.validate = this.validate.bind(this);

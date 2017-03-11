@@ -12212,7 +12212,7 @@ var LoginForm = function (_React$Component) {
 			email: "",
 			password: "",
 			errors: { email: [], password: [] },
-			disabled: false
+			disabled: true
 		};
 		_this.handleSubmit = _this.handleSubmit.bind(_this);
 		_this.validate = _this.validate.bind(_this);
