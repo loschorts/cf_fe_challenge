@@ -1,0 +1,7 @@
+node_modules
+bundle.*
+<<<<<<< 1cb602b705784622d339b5f76ab759ccc1648684
+__snapshots__
+=======
+*.log
+>>>>>>> fix strange webpacking issue
