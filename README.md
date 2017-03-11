@@ -10,6 +10,15 @@ live demos: https://loschorts.github.io/cf_fe_challenge/index.html
 	- Firefox
 	- Safari
 
+## Overview
+
+For the widgets portion, I decided to utilize React because the application
+state and rendered UI changes frequently due to user input and (theoretically)
+AJAX. React provides fast DOM updating and allows data to be passed between
+different application components easily. I used Webpack with Babel to transpile
+my source code to cross-browser-compliant JS. Styles are done in basic CSS and
+transpiled with Autoprefixer to ensure cross-browser compatibility.
+
 ## Responses to Design Questions
 
 ### Which design details are difficult to implement?
