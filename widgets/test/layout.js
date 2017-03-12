@@ -1,8 +1,5 @@
 const Browser = require('zombie');
 
-// We're going to make requests to http://example.com/signup
-// Which will be routed to our test server localhost:3000
-
 Browser.localhost('example.com', 3000);
 
 describe('application', function() {
@@ -20,17 +17,23 @@ describe('application', function() {
     });  
 
     it('should mount the React components', function(){
-
+      browser.assert.element("#app")
     });
 
   });
 
-  describe('contains the proper layout', function() {
+  describe('is laid out properly', function() {
 
     it('should contain 3 containers', function() {
       browser.assert.element('#left');
       browser.assert.element('#middle');
       browser.assert.element('#right');
+    });
+
+    it('should have a nav bar, dns-table, and login form (going left to right)', function(){
+      browser.assert.element("#left .nav-bar");
+      browser.assert.element("#middle .dns-table");
+      browser.assert.element("#right .login-form");
     });
 
   });

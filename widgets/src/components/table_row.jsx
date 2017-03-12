@@ -48,7 +48,7 @@ class TableRow extends React.Component {
 		return (
 			<tr 
 				style={{borderColor}}
-				key={`className-row-${ord}`}
+				key={`${className}-row-${ord}`}
 				onClick={this.handleSelect} 
 				className={`${className}-row ${selectedClass} ${checkedClass}`}>
 				{entries}

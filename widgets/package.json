@@ -38,17 +38,13 @@
     "enzyme": "^2.7.1",
     "jest": "^19.0.2",
     "jest-enzyme": "^2.1.2",
+    "jquery": "^3.1.1",
+    "jsdom-global": "^2.1.1",
     "mocha": "^3.2.0",
     "postcss-cli": "^3.0.0-beta",
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "regenerator-runtime": "^0.10.3",
     "zombie": "^5.0.5"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ]
   }
 }
