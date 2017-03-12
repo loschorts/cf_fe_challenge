@@ -1,24 +1,32 @@
-var Browser = require('zombie');
+const Browser = require('zombie');
 
+// We're going to make requests to http://example.com/signup
+// Which will be routed to our test server localhost:3000
+Browser.localhost('example.com', 3000);
 
-Browser.localhost('localhost', 8080);
-const browser = new Browser();
+describe('User visits signup page', function() {
 
+  const browser = new Browser();
 
-describe("testing with zombie", function() {
+  before(function(done) {
+    browser.visit('/', done);
+  });
 
-    it("should have defined headless browser", function(next){
-        expect(typeof browser != "undefined").toBe(true);
-        expect(browser instanceof Browser).toBe(true);
-        next();
+  describe('opens page', function() {
+
+    // before(function(done) {
+    //   browser
+    //     .fill('email',    'zombie@underworld.dead')
+    //     .fill('password', 'eat-the-living')
+    //     .pressButton('Sign Me Up!', done);
+    // });
+
+    it('should be successful', function() {
+      browser.assert.success();
     });
 
-    it("should visit the site and see the login form", function(next) {
-        browser.visit(url, function(err) {
-            expect(browser.success).toBe(true);
-            expect(browser.query("#middle")).toBeDefined();
-            next();
-        })
+    it('should see welcome page', function() {
+      browser.assert.text('dns');
     });
-
+  });
 });
