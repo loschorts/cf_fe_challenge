@@ -2,9 +2,10 @@ const Browser = require('zombie');
 
 // We're going to make requests to http://example.com/signup
 // Which will be routed to our test server localhost:3000
+
 Browser.localhost('example.com', 3000);
 
-describe('User visits signup page', function() {
+describe('application', function() {
 
   const browser = new Browser();
 
@@ -12,21 +13,26 @@ describe('User visits signup page', function() {
     browser.visit('/', done);
   });
 
-  describe('opens page', function() {
-
-    // before(function(done) {
-    //   browser
-    //     .fill('email',    'zombie@underworld.dead')
-    //     .fill('password', 'eat-the-living')
-    //     .pressButton('Sign Me Up!', done);
-    // });
+  describe('should mount', function() {
 
     it('should be successful', function() {
       browser.assert.success();
+    });  
+
+    it('should mount the React components', function(){
+
     });
 
-    it('should see welcome page', function() {
-      browser.assert.text('dns');
-    });
   });
+
+  describe('contains the proper layout', function() {
+
+    it('should contain 3 containers', function() {
+      browser.assert.element('#left');
+      browser.assert.element('#middle');
+      browser.assert.element('#right');
+    });
+
+  });
+
 });

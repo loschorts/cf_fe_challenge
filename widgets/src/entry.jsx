@@ -23,7 +23,7 @@ const links = [
 ]
 
 const Root = ({ children }) => (
-	<main className="center widgets">
+	<main id="app" className="center">
 		<div className="container widgets">
 			<section id="left" className="widget">
 				<NavBar links={links}/>
