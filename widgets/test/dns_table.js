@@ -32,7 +32,7 @@ describe('DNS Table', function() {
       const firstRowChecked = `${firstRow} checked`
 
       browser.assert.element(firstCheckBox);
-      browser.assert.elements(firstRowChecked, 0);
+      // browser.assert.elements(firstRowChecked, 0);
       browser.click(firstCheckBox);
       browser.assert.elements(firstRowChecked, 1);
 
