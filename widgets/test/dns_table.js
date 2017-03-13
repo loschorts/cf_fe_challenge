@@ -1,8 +1,6 @@
 const Browser = require('zombie');
 Browser.silent = true;
-
-const $ = require('jquery');
-require('jsdom-global')();
+const wait = require('./wait');
 
 Browser.localhost('example.com', 3000);
 
@@ -35,45 +33,61 @@ describe('DNS Table', function() {
 
     describe('checking', function(){
 
-      it('rows can be checked', function(){
+      it('rows can be checked', function(done){
         // check for a class toggle onClick
 
+        browser.assert.element(firstRow);
         browser.assert.elements(firstRowChecked, 0);
         browser.click(firstCheckBox);
 
         // shove onto call stack to await react re-render
-        setTimeout(()=>{
-          browser.assert.elements(firstRowChecked, 1);
-        })
+        wait(
+          ()=> browser.html(firstRowChecked).length > 0,
+          ()=>{
+            browser.assert.element(firstRowChecked);
+            done();
+          },
+          1000
+        );
 
       })
 
-      it("rows aren't selected when checked", function(){
+      it("rows aren't selected when checked", function(done){
         // check for a class toggle onClick
 
         browser.assert.elements(firstRowSelected, 0);
         browser.click(firstCheckBox);
 
-        // shove onto call stack to await react re-render
-        setTimeout(()=>{
-          browser.assert.elements(firstRowSelected, 1);
-        })
+        // shove onto call stack to await re-render
+        wait(
+          ()=> browser.html(firstRowChecked).length > 0,
+          ()=>{
+            browser.assert.elements(firstRowSelected, 0);
+            done();
+          },
+          1000
+        );
 
       })     
     })
 
     describe('selecting', function(){
 
-      it('rows can be selected on click', function(){
+      it('rows can be selected on click', function(done){
         // check for a class toggle onClick
 
         browser.assert.elements(firstRowSelected, 0);
         browser.click(firstRow);
 
         // shove onto call stack to await react re-render
-        setTimeout(()=>{
-          browser.assert.elements(firstRowSelected, 1);
-        })
+        wait(
+          ()=>browser.html(firstRowSelected).length > 0,
+          ()=>{
+            browser.assert.elements(firstRowSelected, 1);
+            done();
+          },
+          1000
+        );
 
       })    
     })

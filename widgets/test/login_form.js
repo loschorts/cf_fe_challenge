@@ -39,7 +39,7 @@ describe('Login Form', function() {
       .fill('Email', valid.email)
       .fill('Password', valid.password)
 
-    const inputBadData = () => browser
+    const inputInvalidData = () => browser
       .fill('Email', invalid.email)
       .fill('Password', invalid.password)
 
@@ -52,38 +52,57 @@ describe('Login Form', function() {
     it ('updates form values when input is changed', function(done){
       inputValidData();
 
-      browser.assert.attribute('.login-form input[name=Email]', 
-        'value', 'zombie@underworld.dead')
-      browser.assert.attribute('.login-form input[name=Password]', 
-        'value', 'eat-the-living')
+      browser.assert.attribute(email, 
+        'value', valid.email)
+      browser.assert.attribute(password, 
+        'value', valid.password)
 
       done()
     })
 
-    it ()
+    it ('shows error messages and disables login button when invalid input is given', function(done){
+      inputInvalidData();
+      browser.click('.login-form input.submit');
+
+      wait(
+        () => true,
+        () => {
+          browser.assert.elements('.form-errors', 2);
+          browser.assert.attribute(login, 'disabled', '');
+          done();
+        },
+        0
+      );
+    });
+
+    // need to listen for submit event
+    it ('submits requests with valid input');
+
+    it ('displays server authentication errors', function(done){
+      inputInvalidData();
+
+      browser.assert.attribute(email, 'value', valid.email)
+      browser.assert.attribute(password, 'value', valid.password)
+      browser.assert.attribute(login, 'disabled', undefined)
+
+      browser.click(login);
+
+      wait(
+        () => {
+          console.log(browser.html('.login-form'));
+          return (browser.html('.form-errors').length > 0);
+        },
+        () => {
+          browser.assert.elements('.form-errors', {atLeast: 1});
+          done();
+        },
+        2000
+      );
+
+    })
 
   });
 
 });
 
 
-      // wait(
-      //   () => {
-          
-      //     const emailString = browser.html('.login-form input[name=Email]')
-      //     const pwString = browser.html('.login-form input[name=Password]')
-
-      //     return (
-      //       (emailString.search(valid.email) !== -1) &&
-      //       (pwString.search(valid.password) !== -1)
-      //     )
-      //   },
-      //   () => {
-      //     browser.assert.attribute('.login-form input[name=Email]', 
-      //       'value', 'zombie@underworld.dead')
-      //     browser.assert.attribute('.login-form input[name=Password]', 
-      //       'value', 'eat-the-living')
-      //     done();
-      //   },
-      //   0
-      // );
