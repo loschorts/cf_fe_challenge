@@ -240,8 +240,7 @@ I believe that the main compromise on this project was doing CSS layout without 
 
 ## Improvements
 
-- [x] End-to-End testing via Nightwatch.
-- [ ] Implement Unit.
+- [ ] Implement Unit Testing via Mocha/Enzyme.
 
 - [ ] Refactor stylesheets to use webpack and / or multiple files organized by domain.
 
