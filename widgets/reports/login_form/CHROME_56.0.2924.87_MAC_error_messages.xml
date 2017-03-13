@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="login_form.error_messages"
+    errors="0" failures="0" hostname="" id="" package="login_form" skipped="0"
+    tests="3" time="11.00" timestamp="Mon, 13 Mar 2017 05:26:33 GMT">
+  
+    <testcase name="Form submission is disabled until fields are not empty" classname="login_form.error_messages" time="3.260" assertions="8">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Form displays error messages on invalid fields" classname="login_form.error_messages" time="4.709" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Form displays server errors after login attempt" classname="login_form.error_messages" time="3.035" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>

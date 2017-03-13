@@ -35,7 +35,6 @@ const RowsAreSelectable = b => {
 }
 
 module.exports = {
-  // DNSTableHasContent,
   RowsAreCheckable,
   RowsAreSelectable
 };
