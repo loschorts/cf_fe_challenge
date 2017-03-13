@@ -19,7 +19,7 @@ state and rendered UI changes frequently due to user input and (theoretically)
 AJAX. React provides fast DOM updating and allows data to be passed between
 different application components easily. I used Webpack with Babel to transpile
 my ES6/JSX source code to cross-browser-compliant JS. Styles are done in basic CSS and
-transpiled with Autoprefixer to ensure cross-browser compatibility. End-to-end testing was done via Nightwatch/Selenium. Unit testing could improve diagnostics, but the scope of the project and timeframe led me to prioritize end-to-end testing as a MVP litmus test.
+transpiled with Autoprefixer to ensure cross-browser compatibility. End-to-end testing was done via Nightwatch/Selenium. Unit testing could improve diagnostics, but the scope of the project and timeframe led me to prioritize end-to-end testing as a litmus test for project requirements.
 
 Part 2 was written in ES5 (it seemed to match the concept of the problem more
 closely). `EventEmitter`, `FriendEmitter`, `FriendList`, and `LinkedList` are
