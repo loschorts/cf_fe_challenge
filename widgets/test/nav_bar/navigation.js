@@ -4,9 +4,6 @@ const setup = b => {
 		b.url('localhost:3000')
 }
 
-
-
-
 const RootsToDNS = b => {
 	setup(b)
 

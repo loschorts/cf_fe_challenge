@@ -12,7 +12,6 @@ const RowsAreCheckable = b => {
 
 	mount(b);
 
-
 	b.expect.element(firstRow).to.be.present;
 	b.expect.element(`${firstRow}.checked`).not.to.be.present
 	b.expect.element(`${firstRow}.selected`).not.to.be.present
