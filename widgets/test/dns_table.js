@@ -1,4 +1,5 @@
 const Browser = require('zombie');
+Browser.silent = true;
 
 const $ = require('jquery');
 require('jsdom-global')();

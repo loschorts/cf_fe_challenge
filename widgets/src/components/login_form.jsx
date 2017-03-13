@@ -95,6 +95,7 @@ class LoginForm extends React.Component {
 				<label>Email
 				<input 
 					className={`text ${styles.email}`}
+					name="Email"
 					type="text"
 					value={email} 
 					placeholder="sample@email.com"
@@ -105,6 +106,7 @@ class LoginForm extends React.Component {
 				<label>Password
 				<input 
 					className={`text ${styles.password}`}
+					name="Password"
 					type="password"
 					value={password} 
 					placeholder="password"

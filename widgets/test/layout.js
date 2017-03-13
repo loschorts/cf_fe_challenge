@@ -1,4 +1,5 @@
 const Browser = require('zombie');
+Browser.silent = true;
 
 Browser.localhost('example.com', 3000);
 
@@ -12,11 +13,11 @@ describe('application', function() {
 
   describe('should mount', function() {
 
-    it('should be successful', function() {
+    it('exist at the root URL', function() {
       browser.assert.success();
     });  
 
-    it('should mount the React components', function(){
+    it('should mount the React application', function(){
       browser.assert.element("#app")
     });
 
