@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="dns_table"
+    errors="1" failures="0" hostname="" id="" package="dns_table" skipped="0"
+    tests="1" time="0.007000" timestamp="Mon, 13 Mar 2017 04:12:30 GMT">
+  
+    <testcase name="DNS Table has content" classname="dns_table" time="0.007000" assertions="0">
+    </testcase>
+      <system-err>
+          Error while running [Dns Table / DNS Table has content]:
+
+  TypeError: b.url(...) is not a function
+    at Object.run [as DNS Table has content] (/Users/KenTran/Desktop/cf_fe_challenge/widgets/test/dns_table.js:7:2)
+    at Module.call (/usr/local/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /usr/local/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:67:7)
+      </system-err>
+  
+  
+  </testsuite>
+</testsuites>
